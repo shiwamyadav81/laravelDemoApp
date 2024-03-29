@@ -4,12 +4,19 @@
     </div>
     <div class="p-4">
         @foreach ($uNotifications as $notification)
-            <div class="flex items-center py-2">
-                <img class="h-8 w-8 mr-2" src="{{ asset('images/user.png') }}" alt="User avatar">
-                <p class="text-cyan-600 font-bold">{{ $notification }}</p>
+            @php
+                $separated = explode(' ', $notification);
+            @endphp
+            <div class="flex items-center py-2 px-2">
+                <img class="h-8 w-8" src="{{ asset('images/user.png') }}" alt="User avatar">
+                <span class="text-cyan-600 font-bold px-2 text-decoration-line: underline">
+                    {{ $separated[0] }}
+                </span>
+                <span>
+                    {{ $separated[1] }}
+                </span>
             </div>
             <hr class="border-gray-300">
         @endforeach
     </div>
-
 </div>

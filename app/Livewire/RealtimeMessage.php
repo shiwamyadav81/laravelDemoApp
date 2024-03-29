@@ -16,7 +16,7 @@ class RealtimeMessage extends Component
     public function handleRealtimeMessage($message): void
     {
         $this->uNotifications[] = $message['message'];
-        $this->alert('success', 'New User Created: ' . $message['message'], [
+        $this->alert('success', 'User : ' . $message['message'], [
             'timerProgressBar' => true,
             'position' => 'center',
             'timer' => 15000,
